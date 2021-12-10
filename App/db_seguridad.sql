@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `tb_documentos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_documentos` (
   `ID` int NOT NULL,
-  `Nombre` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `Nombre` varchar(250)   NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -60,37 +60,35 @@ DROP TABLE IF EXISTS `ZTS_CLI`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ZTS_CLI` (
   `CORCLI` int NOT NULL AUTO_INCREMENT,
-  `NCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `NOFCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `NOCCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `MAICLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `RFCCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `NCLI` varchar(250)   not null,
+  `NOFCLI` varchar(250)   not null,
+  `NOCCLI` varchar(250)   not null,
+  `MAICLI` varchar(250)   NOT NULL,
+  `RFCCLI` varchar(250)   DEFAULT NULL,
   `Tipo_Doc` int(1) NOT NULL,
-  `WEBCLI` varchar(500) CHARACTER SET uf8mb4 COLLATE utf8mb4_bin Default null,
-  `FBCLI` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin Default null,
-  `TOFCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `EXTCLI` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin Default null,
-  `MOVCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `MOVCLI_E`varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `WAPCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `UBICLI` varchar(250) CHARACTER SET utf8 COLLATE utf8mb4_bin NOT NULL,
+  `WEBCLI` varchar(500)   Default null,
+  `FBCLI` varchar(500)   Default null,
+  `TOFCLI` varchar(250)   DEFAULT NULL,
+  `EXTCLI` varchar(100)   Default null,
+  `MOVCLI` varchar(250)   NOT NULL,
+  `MOVCLI_E`varchar(250)   NOT NULL,
+  `WAPCLI` varchar(250)   NOT NULL,
+  `UBICLI` varchar(250)  NOT NULL,
   `RFACLI` int(1)  NOT NULL,
-  `NCPCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `PCPCLI` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `TCPCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
-  `VENCLI` varchar(250)CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
+  `NCPCLI` varchar(250)   not null,
+  `PCPCLI` varchar(150)   not null,
+  `TCPCLI` varchar(250)   not null,
+  `VENCLI` varchar(250)  not null,
   `FPACLi` int(1) not null,
   `TIPCLI` int(1)  null,
-  `ZIPCLI` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin not null,
+  `ZIPCLI` varchar(250)   not null,
   `ACTCLI` int(1) not null,
   `STACLI`int(1) not null,
   `FECCLI` datetime NOT NULL,
   `FACCLI` datetime Default Null,
   `FUMCLI` datetime Not Null,
   `FCUCLI` date Not null,
-  PRIMARY KEY (`Correlativo`),
-  UNIQUE KEY `Usuario_UNIQUE` (`Usuario`),
-  UNIQUE KEY `Numero_Doc` (`RFC`),
+  PRIMARY KEY (`CORCLI`),
   KEY `Tipo_Doc` (`Tipo_Doc`),
   CONSTRAINT `tb_clientes_ibfk_1` FOREIGN KEY (`Tipo_Doc`) REFERENCES `tb_documentos` (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
@@ -101,9 +99,9 @@ CREATE TABLE `ZTS_CLI` (
 --
 
 LOCK TABLES `ZTS_CLI` WRITE;
-/*!40000 ALTER TABLE `tb_clientes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ZTS_CLI` DISABLE KEYS */;
 
-/*!40000 ALTER TABLE `tb_clientes` ENABLE KEYS */;
+/*!40000 ALTER TABLE `ZTS_CLI` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -122,8 +120,8 @@ Create Table `ZTS_ZIP`(
   `COLZIP` VARCHAR(250) NOT NULL,
   `TASZIP` VARCHAR(250) NOT NULL,
   `MNPZIP` VARCHAR(250) NOT NULL,
-  `CIUZIP` VARCHAR(250) NOT NULL,
-  `ESTZIP` VARCHAR(250) NOT NULL,
+  `CIUZIP` VARCHAR(250) DEFAULT Null,
+  `ESTZIP` VARCHAR(250) not null,
   PRIMARY KEY (`CODZIP`)
 );
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
