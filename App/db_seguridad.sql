@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `db_seguridad` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `db_seguridadzt` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_seguridad`;
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
@@ -121,8 +121,7 @@ Create Table `ZTS_ZIP`(
   `TASZIP` VARCHAR(250) NOT NULL,
   `MNPZIP` VARCHAR(250) NOT NULL,
   `CIUZIP` VARCHAR(250) DEFAULT Null,
-  `ESTZIP` VARCHAR(250) not null,
-  PRIMARY KEY (`CODZIP`)
+  `ESTZIP` VARCHAR(250) not null
 );
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
