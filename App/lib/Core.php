@@ -13,6 +13,14 @@ class Core{
         }
         require_once '../app/Controller/'.$this->contro_act.'.php';
         $this->contro_act = new $this->contro_act;
+        if(isset($url[1])){
+            if (method_exists($this->contro_act,$url[1])){
+                $this->metodo_act= $url[1];
+                unset($url[0]);
+            }
+            
+        }
+        echo $this->metodo_act;
     }
     public function getUrl(){
        // echo $_GET['url'];
